@@ -1,4 +1,10 @@
-export const fetchWeatherForecastGet: () => Promise<WeatherForecast> = async () => {
+export const fetchRandomGet: () => Promise<number> = async () => {
+  const response = await fetch("Random");
+  const body = await response.json();
+  return body;
+}
+
+export const fetchWeatherForecastGet: () => Promise<WeatherForecast[]> = async () => {
   const response = await fetch("WeatherForecast/GetWeatherForecast");
   const body = await response.json();
   return body;
@@ -14,6 +20,6 @@ export type WeatherForecast = {
   date: Date
   temperatureC: number
   temperatureF: number
-  summary: any
+  summary: string | null | undefined
 }
 

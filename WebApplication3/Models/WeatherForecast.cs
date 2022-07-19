@@ -10,4 +10,4 @@ namespace WebApplication3.Models
 
         public string? Summary { get; set; }
     }
-}   
+}
